@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <title>Portfolio — Rafi Bettaieb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <!-- ───── NAV ───── -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="800">
+                <span>Rafi</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-down" data-aos-delay="100"><a href="#home">Accueil</a></div>
+                <div class="link" data-aos="fade-down" data-aos-delay="180"><a href="#about">À propos</a></div>
+                <div class="link" data-aos="fade-down" data-aos-delay="260"><a href="#resume">Parcours</a></div>
+                <div class="link" data-aos="fade-down" data-aos-delay="340"><a href="#projects">Projets</a></div>
+                <div class="link" data-aos="fade-down" data-aos-delay="420"><a href="#extras">Certifs</a></div>
+                <div class="link contact-btn" data-aos="fade-down" data-aos-delay="500"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home" onclick="cancel()">Accueil</a>
+                <a href="#about" onclick="cancel()">À propos</a>
+                <a href="#resume" onclick="cancel()">Parcours</a>
+                <a href="#projects" onclick="cancel()">Projets</a>
+                <a href="#extras" onclick="cancel()">Certifs</a>
+                <a href="#contact" onclick="cancel()">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ───── HERO ───── -->
+    <section id="home">
+        <div class="hero-bg-blob blob-1"></div>
+        <div class="hero-bg-blob blob-2"></div>
+        <div class="main-container">
+            <div class="hero-avatar" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="avatar-ring">
+                    <img src="assets/img/4a1718f2-40b0-435e-be90-ba441570fd31" alt="Rafi Bettaieb" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div>
+                </div>
+                <div class="hero-badge">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Télécom SudParis · IP Paris</span>
+                </div>
+            </div>
+            <div class="content">
+                <p class="hero-eyebrow" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">Bonjour, je suis</p>
+                <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Rafi<br><span>Bettaieb</span></h1>
+                <div class="typewriter" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                    Développeur <span id="home-typed"></span>
+                </div>
+                <p class="hero-desc" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">Futur élève-ingénieur à Télécom SudParis (Institut Polytechnique de Paris) · double-cursus Sorbonne&nbsp;/ ISI Tunis. Mon profil allie la rigueur de la programmation compétitive à des compétences concrètes en architectures Full-Stack et supervision de données.</p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                    <div class="social-links">
+                        <a href="https://github.com/Rafi-Bettaieb" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rafi-bettaieb/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="assets/pdf/CV_alternance.pdf" target="_blank" download="CV_Rafi_BETTAIEB.pdf">
+                        <button class="btn-primary"><i class="fa-solid fa-download"></i> Télécharger le CV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint" data-aos="fade-up" data-aos-delay="1200"><i class="fa-solid fa-chevron-down"></i></div>
+    </section>
+
+    <!-- ───── À PROPOS ───── -->
+    <section id="about" class="about-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">01 — À propos</span>
+            <h2>Compétences <span>&amp; Profil</span></h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="150">
+                <p>Passionné par la résolution de problèmes et la programmation compétitive (C++, Codeforces), j'aime concevoir des solutions robustes et scalables. Fort de mes expériences en développement Full-Stack et Data Observability, je suis prêt à relever de nouveaux défis techniques.</p>
+                <div class="stat-row">
+                    <div class="stat"><strong>2</strong><span>Stages</span></div>
+                    <div class="stat"><strong>6+</strong><span>Projets</span></div>
+                    <div class="stat"><strong>910</strong><span>TOEIC</span></div>
+                </div>
+            </div>
+            <div class="skills-container" data-aos="fade-left" data-aos-delay="250">
+                <div class="skill-group">
+                    <span class="skill-group-label">Langages</span>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Python</div><div class="skill-tag">C++</div><div class="skill-tag">Java</div><div class="skill-tag">JavaScript</div><div class="skill-tag">TypeScript</div><div class="skill-tag">SQL</div>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-group-label">Frontend &amp; Backend</span>
+                    <div class="skill-tags">
+                        <div class="skill-tag">React.js</div><div class="skill-tag">Next.js</div><div class="skill-tag">Vue.js</div><div class="skill-tag">Node.js</div><div class="skill-tag">Express</div><div class="skill-tag">Flask</div>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-group-label">Data &amp; DevOps</span>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Apache Kafka</div><div class="skill-tag">MongoDB</div><div class="skill-tag">PostgreSQL</div><div class="skill-tag">Redis</div><div class="skill-tag">Docker</div><div class="skill-tag">Grafana</div>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-group-label">Méthodes</span>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Agile / Scrum</div><div class="skill-tag">TDD</div><div class="skill-tag">CI/CD</div><div class="skill-tag">UML</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── PARCOURS ───── -->
+    <section id="resume" class="resume-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">02 — Parcours</span>
+            <h2>Formation <span>&amp; Expériences</span></h2>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-column" data-aos="fade-right" data-aos-delay="100">
+                <h3 class="column-title"><i class="fa-solid fa-graduation-cap"></i> Formations</h3>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026 – 2029</span>
+                    <h4>Cycle Ingénieur — Télécom SudParis</h4>
+                    <p>Admis en apprentissage · Institut Polytechnique de Paris.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2025 – Présent</span>
+                    <h4>BUT 3 Informatique</h4>
+                    <p>Université Sorbonne Paris Nord · Codiplomation IUT Villetaneuse / ISI Tunis.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2023 – 2025</span>
+                    <h4>Licence Génie Logiciel et Système d'Informatique </h4>
+                    <p>Institut Supérieur d'Informatique</p>
+                </div>
+            </div>
+            <div class="timeline-column" data-aos="fade-left" data-aos-delay="100">
+                <h3 class="column-title"><i class="fa-solid fa-briefcase"></i> Stages</h3>
+                <div class="timeline-item">
+                    <span class="timeline-date">Avril – Août 2026</span>
+                    <h4>Stage Data / Full-Stack — Omicrone</h4>
+                    <p>Conception d'une solution de Data Observability (streaming Kafka) avec détection d'anomalies, alerting et dashboards Grafana.</p>
+                    <div class="stack-chips"><span>Python</span><span>Kafka</span><span>Grafana</span><span>React</span><span>PostgreSQL</span></div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Juillet 2025</span>
+                    <h4>Stage Développeur FullStack — Tunisys</h4>
+                    <p>App web React/Flask sécurisée (JWT, SFTP) pour consultation de médias DAB, déployée sur Linux en mode Agile.</p>
+                    <div class="stack-chips"><span>React</span><span>TypeScript</span><span>Flask</span><span>REST API</span><span>Linux</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── PROJETS ───── -->
+    <section id="projects" class="projects-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">03 — Projets</span>
+            <h2>Réalisations <span>Notables</span></h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="50">
+                <div class="project-icon"><i class="fa-solid fa-comments"></i></div>
+                <h3>TalkTime</h3>
+                <p>Messagerie temps réel sécurisée avec partage de fichiers, groupes et IA intégrée pour réponses contextuelles.</p>
+                <div class="stack-chips"><span>MERN</span><span>WebSocket</span><span>IA</span></div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="120">
+                <div class="project-icon"><i class="fa-solid fa-utensils"></i></div>
+                <h3>Smart Fridge &amp; Recettes</h3>
+                <p>Application mobile hors ligne : recommandation de recettes adaptive, gestion de stock et suivi nutritionnel.</p>
+                <div class="stack-chips"><span>Flutter</span><span>SQLite</span></div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="190">
+                <div class="project-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                <h3>App UberEats</h3>
+                <p>Attribution intelligente des commandes par géolocalisation et score de performance des livreurs.</p>
+                <div class="stack-chips"><span>Python</span><span>MongoDB</span><span>Redis</span></div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="260">
+                <div class="project-icon"><i class="fa-solid fa-car"></i></div>
+                <h3>Gestion Location Auto</h3>
+                <p>Logiciel desktop gérant un catalogue de +100 véhicules, cycle de réservation complet et facturation automatisée.</p>
+                <div class="stack-chips"><span>Java</span><span>JavaFX</span></div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="330">
+                <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>SensiNum</h3>
+                <p>Plateforme éducative (cours, quiz, chatbot IA) en architecture conteneurisée, simulant des vulnérabilités réseau.</p>
+                <div class="stack-chips"><span>Node.js</span><span>Vue.js</span><span>Tailwind</span><span>Docker</span></div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="project-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <h3>E-Commerce</h3>
+                <p>Plateforme complète avec gestion produits, panier, commandes et paiements. Interface réactive et backend sécurisé.</p>
+                <div class="stack-chips"><span>MERN</span><span>JWT</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── CERTIFS & PLUS ───── -->
+    <section id="extras" class="extras-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">04 — Certifications &amp; Plus</span>
+            <h2>Bagages <span>&amp; Intérêts</span></h2>
+        </div>
+        <div class="extras-container">
+            <div class="extra-box" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fa-solid fa-award"></i> Certifications</h3>
+                <ul>
+                    <li>Supervised Machine Learning : Regression <em>(IBM)</em></li>
+                    <li>Exploratory Data Analysis for ML <em>(IBM)</em></li>
+                    <li>FullStack &amp; Python <em>(GoMyCode)</em></li>
+                    <li>SQL Intermediate &amp; Problem Solving <em>(HackerRank)</em></li>
+                    <li>IBM Intro to Machine Learning Specialization <em>(en cours)</em></li>
+                </ul>
+            </div>
+            <div class="extra-box" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fa-solid fa-language"></i> Langues</h3>
+                <ul>
+                    <li><strong>Anglais</strong> — B2 · TOEIC 910/990 (Mars 2026)</li>
+                    <li><strong>Français</strong> — Courant</li>
+                    <li><strong>Arabe</strong> — Natif</li>
+                    <li><strong>Allemand</strong> — A2 (ÖSD)</li>
+                </ul>
+            </div>
+            <div class="extra-box" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fa-solid fa-heart"></i> Intérêts</h3>
+                <ul>
+                    <li><i class="fa-solid fa-code"></i> Programmation Compétitive</li>
+                    <li><i class="fa-solid fa-chess"></i> Stratégie — Échecs</li>
+                    <li><i class="fa-solid fa-futbol"></i> Football &amp; Formule 1</li>
+                    <li><i class="fa-solid fa-hand-fist"></i> Arts Martiaux — Taekwondo, Karaté</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── CONTACT ───── -->
+    <section id="contact" class="contact-section">
+        <div class="contact-inner" data-aos="zoom-in">
+            <span class="section-label">05 — Contact</span>
+            <h2>Travaillons <span>ensemble</span></h2>
+            <p>Disponible pour une alternance IA / Data / Full-Stack de 36 mois dès septembre 2026. N'hésitez pas à me contacter !</p>
+            <div class="contact-actions">
+                <a href="mailto:bettaieb.rafi04@gmail.com" class="btn-primary"><i class="fa-solid fa-envelope"></i> Envoyer un e-mail</a>
+                <a href="https://www.linkedin.com/in/rafi-bettaieb/" target="_blank" class="btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Rafi Bettaieb · Télécom SudParis</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script>
+        AOS.init({ offset: 60, once: true });
+
+        function hamburg() { document.querySelector(".dropdown").style.transform = "translateY(0)"; }
+        function cancel()   { document.querySelector(".dropdown").style.transform = "translateY(-500px)"; }
+
+        new Typed('#home-typed', {
+            strings: ['Full-Stack', 'Data', 'IA'],
+            typeSpeed: 80,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true,
+            cursorChar: '|',
+        });
+
+        // Scroll-hint fade
+        window.addEventListener('scroll', () => {
+            const sh = document.querySelector('.scroll-hint');
+            if (sh) sh.style.opacity = window.scrollY > 80 ? '0' : '1';
+        });
+    </script>
+</body>
+</html>
