@@ -25,7 +25,12 @@
                 <div class="link" data-aos="fade-down" data-aos-delay="420"><a href="#extras">Certifs</a></div>
                 <div class="link contact-btn" data-aos="fade-down" data-aos-delay="500"><a href="#contact">Contact</a></div>
             </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            </div>
         </div>
         <div class="dropdown">
             <div class="links">
@@ -67,8 +72,8 @@
                         <a href="https://github.com/Rafi-Bettaieb" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/rafi-bettaieb/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <a href="assets/pdf/CV_alternance.pdf" target="_blank" download="CV_Rafi_BETTAIEB.pdf">
-                        <button class="btn-primary"><i class="fa-solid fa-download"></i> Télécharger le CV</button>
+                    <a href="assets/pdf/CV_Rafi_BETTAIEB.pdf" download="CV_Rafi_BETTAIEB.pdf" class="btn-primary">
+                        <i class="fa-solid fa-download"></i> Télécharger le CV
                     </a>
                 </div>
             </div>
@@ -85,11 +90,7 @@
         <div class="about-content">
             <div class="about-text" data-aos="fade-right" data-aos-delay="150">
                 <p>Passionné par la résolution de problèmes et la programmation compétitive (C++, Codeforces), j'aime concevoir des solutions robustes et scalables. Fort de mes expériences en développement Full-Stack et Data Observability, je suis prêt à relever de nouveaux défis techniques.</p>
-                <div class="stat-row">
-                    <div class="stat"><strong>2</strong><span>Stages</span></div>
-                    <div class="stat"><strong>10+</strong><span>Projets</span></div>
-                    <div class="stat"><strong>910</strong><span>TOEIC</span></div>
-                </div>
+
             </div>
             <div class="skills-container" data-aos="fade-left" data-aos-delay="250">
                 <div class="skill-group">
@@ -123,6 +124,41 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ───── GITHUB STATS ───── -->
+    <section id="github-stats" class="github-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">GitHub</span>
+            <h2>Activité <span>&amp; Contributions</span></h2>
+        </div>
+        <div class="github-stats-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="github-cards">
+                <div class="github-stat-card" id="gh-repos">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <strong id="gh-repos-count">—</strong>
+                    <span>Repos publics</span>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <strong>10+</strong>
+                    <span>Projets réalisés</span>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <strong>2</strong>
+                    <span>Stages effectués</span>
+                </div>
+                <div class="github-stat-card" id="gh-commits">
+                    <i class="fa-solid fa-code-commit"></i>
+                    <strong id="gh-commits-count">—</strong>
+                    <span>Contributions (12 mois)</span>
+                </div>
+            </div>
+            <a href="https://github.com/Rafi-Bettaieb" target="_blank" class="btn-outline github-cta">
+                <i class="fa-brands fa-github"></i> Voir mon GitHub
+            </a>
         </div>
     </section>
 
@@ -179,40 +215,96 @@
         </div>
         <div class="projects-grid">
             <div class="project-card" data-aos="zoom-in" data-aos-delay="50">
-                <div class="project-icon"><i class="fa-solid fa-comments"></i></div>
-                <h3>TalkTime</h3>
-                <p>Messagerie temps réel sécurisée avec partage de fichiers, groupes et IA intégrée pour réponses contextuelles.</p>
-                <div class="stack-chips"><span>MERN</span><span>WebSocket</span><span>IA</span></div>
+                <div class="project-img">
+                    <img src="assets/img/talktime-preview.png" alt="TalkTime preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-comments"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>TalkTime</h3>
+                    <p>Messagerie temps réel sécurisée avec partage de fichiers, groupes et IA intégrée pour réponses contextuelles.</p>
+                    <div class="stack-chips"><span>MERN</span><span>WebSocket</span><span>IA</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/talktime" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank" class="project-link project-link-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="120">
-                <div class="project-icon"><i class="fa-solid fa-utensils"></i></div>
-                <h3>Smart Fridge &amp; Recettes</h3>
-                <p>Application mobile hors ligne : recommandation de recettes adaptive, gestion de stock et suivi nutritionnel.</p>
-                <div class="stack-chips"><span>Flutter</span><span>SQLite</span></div>
+                <div class="project-img">
+                    <img src="assets/img/smart-fridge-preview.png" alt="Smart Fridge preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-utensils"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Smart Fridge &amp; Recettes</h3>
+                    <p>Application mobile hors ligne : recommandation de recettes adaptive, gestion de stock et suivi nutritionnel.</p>
+                    <div class="stack-chips"><span>Flutter</span><span>SQLite</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/smart-fridge" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="190">
-                <div class="project-icon"><i class="fa-solid fa-motorcycle"></i></div>
-                <h3>App UberEats</h3>
-                <p>Attribution intelligente des commandes par géolocalisation et score de performance des livreurs.</p>
-                <div class="stack-chips"><span>React</span><span>Python</span><span>MongoDB</span><span>Redis</span></div>
+                <div class="project-img">
+                    <img src="assets/img/ubereats-preview.png" alt="App UberEats preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-motorcycle"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3>App UberEats</h3>
+                    <p>Attribution intelligente des commandes par géolocalisation et score de performance des livreurs.</p>
+                    <div class="stack-chips"><span>React</span><span>Python</span><span>MongoDB</span><span>Redis</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/ubereats-clone" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="260">
-                <div class="project-icon"><i class="fa-solid fa-car"></i></div>
-                <h3>Gestion Location Auto</h3>
-                <p>Logiciel desktop gérant un catalogue de +100 véhicules, cycle de réservation complet et facturation automatisée.</p>
-                <div class="stack-chips"><span>Java</span><span>JavaFX</span></div>
+                <div class="project-img">
+                    <img src="assets/img/car-rental-preview.png" alt="Gestion Location Auto preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-car"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-car"></i></div>
+                    <h3>Gestion Location Auto</h3>
+                    <p>Logiciel desktop gérant un catalogue de +100 véhicules, cycle de réservation complet et facturation automatisée.</p>
+                    <div class="stack-chips"><span>Java</span><span>JavaFX</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/car-rental" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="330">
-                <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>SensiNum</h3>
-                <p>Plateforme éducative (cours, quiz, chatbot IA) en architecture conteneurisée, simulant des vulnérabilités réseau.</p>
-                <div class="stack-chips"><span>Node.js</span><span>Vue.js</span><span>Tailwind</span><span>Docker</span></div>
+                <div class="project-img">
+                    <img src="assets/img/sensiNum-preview.png" alt="SensiNum preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>SensiNum</h3>
+                    <p>Plateforme éducative (cours, quiz, chatbot IA) en architecture conteneurisée, simulant des vulnérabilités réseau.</p>
+                    <div class="stack-chips"><span>Node.js</span><span>Vue.js</span><span>Tailwind</span><span>Docker</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/sensiNum" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank" class="project-link project-link-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
-                <div class="project-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                <h3>E-Commerce</h3>
-                <p>Plateforme complète avec gestion produits, panier, commandes et paiements. Interface réactive et backend sécurisé.</p>
-                <div class="stack-chips"><span>MERN</span><span>JWT</span></div>
+                <div class="project-img">
+                    <img src="assets/img/ecommerce-preview.png" alt="E-Commerce preview" onerror="this.parentElement.classList.add('no-img')">
+                    <div class="project-img-placeholder"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <h3>E-Commerce</h3>
+                    <p>Plateforme complète avec gestion produits, panier, commandes et paiements. Interface réactive et backend sécurisé.</p>
+                    <div class="stack-chips"><span>MERN</span><span>JWT</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rafi-Bettaieb/ecommerce" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -224,16 +316,73 @@
             <h2>Bagages <span>&amp; Intérêts</span></h2>
         </div>
         <div class="extras-container">
-            <div class="extra-box" data-aos="fade-up" data-aos-delay="100">
-                <h3><i class="fa-solid fa-award"></i> Certifications</h3>
-                <ul>
-                    <li>Supervised Machine Learning : Regression <em>(IBM)</em></li>
-                    <li>Exploratory Data Analysis for ML <em>(IBM)</em></li>
-                    <li>FullStack &amp; Python <em>(GoMyCode)</em></li>
-                    <li>SQL Intermediate &amp; Problem Solving <em>(HackerRank)</em></li>
-                    <li>IBM Intro to Machine Learning Specialization <em>(en cours)</em></li>
-                </ul>
+        <div class="certif-section-wrapper" data-aos="fade-up" data-aos-delay="80">
+            <div class="certif-category">
+                <h4 class="certif-category-title"><i class="fa-solid fa-brain"></i> IA &amp; Data</h4>
+                <div class="certif-grid">
+                    <a href="https://www.coursera.org/account/accomplishments/verify/" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">Supervised Machine Learning: Regression</span>
+                            <span class="certif-org">IBM — Coursera</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-solid fa-chart-bar"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">Exploratory Data Analysis for ML</span>
+                            <span class="certif-org">IBM — Coursera</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                    <div class="certif-card certif-card--pending">
+                        <div class="certif-icon"><i class="fa-solid fa-spinner"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">IBM ML Specialization</span>
+                            <span class="certif-org">IBM — En cours</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="certif-category">
+                <h4 class="certif-category-title"><i class="fa-solid fa-code"></i> Développement</h4>
+                <div class="certif-grid">
+                    <a href="https://gomycode.com" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">FullStack</span>
+                            <span class="certif-org">GoMyCode</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                    <a href="https://gomycode.com" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">Python</span>
+                            <span class="certif-org">GoMyCode</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/certificates/" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">SQL Intermediate</span>
+                            <span class="certif-org">HackerRank</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/certificates/" target="_blank" class="certif-card">
+                        <div class="certif-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <div class="certif-info">
+                            <span class="certif-title">Problem Solving Basic</span>
+                            <span class="certif-org">HackerRank</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square certif-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
             <div class="extra-box" data-aos="fade-up" data-aos-delay="200">
                 <h3><i class="fa-solid fa-language"></i> Langues</h3>
                 <ul>
@@ -294,6 +443,45 @@
             const sh = document.querySelector('.scroll-hint');
             if (sh) sh.style.opacity = window.scrollY > 80 ? '0' : '1';
         });
+
+        // ── DARK MODE ──
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.querySelector('i').className = savedTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            themeToggle.querySelector('i').className = next === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        });
+
+        // ── GITHUB API ──
+        async function loadGithubStats() {
+            try {
+                const res = await fetch('https://api.github.com/users/Rafi-Bettaieb');
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                document.getElementById('gh-repos-count').textContent = data.public_repos ?? '—';
+
+                // Contributions via GitHub contributions calendar API (no token needed)
+                const contribRes = await fetch(`https://github-contributions-api.jogruber.de/v4/Rafi-Bettaieb?y=last`);
+                if (contribRes.ok) {
+                    const contribData = await contribRes.json();
+                    const total = contribData.total?.lastYear ?? contribData.total?.['2025'] ?? 0;
+                    document.getElementById('gh-commits-count').textContent = total > 0 ? total : '—';
+                } else {
+                    document.getElementById('gh-commits-count').textContent = '—';
+                }
+            } catch (e) {
+                ['gh-repos-count', 'gh-commits-count']
+                    .forEach(id => { document.getElementById(id).textContent = '—'; });
+            }
+        }
+        loadGithubStats();
     </script>
 </body>
 </html>
