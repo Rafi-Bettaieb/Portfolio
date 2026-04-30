@@ -8,9 +8,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
         rel="stylesheet">
-    <title>Portfolio_Rafi Bettaieb</title>
+    <title>Portfolio — Rafi Bettaieb</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
 </head>
 
 <body>
@@ -255,8 +259,16 @@
             <span class="section-label">03 — Projets</span>
             <h2>Réalisations <span>Notables</span></h2>
         </div>
+        <!-- Filtre -->
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="80">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="ia">IA / Data</button>
+            <button class="filter-btn" data-filter="algo">Algo</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+        </div>
         <div class="projects-grid">
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="50">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="50" data-category="fullstack ia">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-comments"></i></div>
                     <h3>TalkTime</h3>
@@ -272,7 +284,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="120">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="120" data-category="mobile">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-utensils"></i></div>
                     <h3>Smart Fridge &amp; Recettes</h3>
@@ -285,7 +297,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="190">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="190" data-category="fullstack">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-motorcycle"></i></div>
                     <h3>App UberEats</h3>
@@ -299,7 +311,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="algo">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-eye"></i></div>
                     <h3>WildLens</h3>
@@ -312,7 +324,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="330">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="330" data-category="fullstack ia">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>SensiNum</h3>
@@ -330,7 +342,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="algo">
                 <div class="project-body">
                     <div class="project-icon"><i class="fa-solid fa-project-diagram"></i></div>
                     <h3>Diagramme de Voronoï</h3>
@@ -564,6 +576,31 @@
             }
         }
         loadGithubStats();
+
+        // ── FILTRES PROJETS ──
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                projectCards.forEach(card => {
+                    const categories = card.dataset.category ? card.dataset.category.split(' ') : [];
+                    const match = filter === 'all' || categories.includes(filter);
+                    if (match) {
+                        card.classList.remove('card-hidden');
+                        card.classList.add('card-visible');
+                    } else {
+                        card.classList.remove('card-visible');
+                        card.classList.add('card-hidden');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
