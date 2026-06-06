@@ -31,7 +31,9 @@
                 <div class="link" data-aos="fade-down" data-aos-delay="260"><a href="#resume">Parcours</a></div>
                 <div class="link" data-aos="fade-down" data-aos-delay="340"><a href="#projects">Projets</a></div>
                 <div class="link" data-aos="fade-down" data-aos-delay="420"><a href="#extras">Certifs</a></div>
-                <div class="link contact-btn" data-aos="fade-down" data-aos-delay="500"><a href="#contact">Contact</a>
+                <div class="link" data-aos="fade-down" data-aos-delay="480"><a href="#competitions">Compétitions</a></div>
+                <div class="link" data-aos="fade-down" data-aos-delay="530"><a href="#portfolio-but">Portfolio BUT</a></div>
+                <div class="link contact-btn" data-aos="fade-down" data-aos-delay="600"><a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="nav-right">
@@ -48,6 +50,8 @@
                 <a href="#resume" onclick="cancel()">Parcours</a>
                 <a href="#projects" onclick="cancel()">Projets</a>
                 <a href="#extras" onclick="cancel()">Certifs</a>
+                <a href="#competitions" onclick="cancel()">Compétitions</a>
+                <a href="#portfolio-but" onclick="cancel()">Portfolio BUT</a>
                 <a href="#contact" onclick="cancel()">Contact</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
@@ -268,95 +272,111 @@
             <button class="filter-btn" data-filter="mobile">Mobile</button>
         </div>
         <div class="projects-grid">
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="50" data-category="fullstack ia">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="50" data-category="fullstack ia"
+                data-title="TalkTime"
+                data-desc="Messagerie temps réel sécurisée avec partage de fichiers, discussions en groupe et intelligence artificielle intégrée pour générer des réponses selon le contexte de la conversation."
+                data-stack="MERN,WebSocket,IA,MongoDB,Node.js,React,Express"
+                data-github="https://github.com/Rafi-Bettaieb/TalkTime.git"
+                data-demo="https://talktime-deployment-test-hasb.vercel.app/">
+                <div class="project-img">
+                    <img src="assets/img/projects/talktime.png" alt="TalkTime" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-comments"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-comments"></i></div>
                     <h3>TalkTime</h3>
-                    <p>Messagerie temps réel sécurisée avec partage de fichiers, groupes et IA intégrée pour réponses
-                        contextuelles.</p>
-                    <div class="stack-chips"><span>MERN</span><span>WebSocket</span><span>IA</span></div>
-                    <div class="project-links">
-                        <a href="https://github.com/Rafi-Bettaieb/TalkTime.git" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="https://talktime-deployment-test-hasb.vercel.app/" target="_blank"
-                            class="project-link project-link-demo"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="120" data-category="mobile">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="120" data-category="mobile"
+                data-title="Smart Fridge &amp; Recettes"
+                data-desc="Application mobile hors ligne combinant un système de recommandation de recettes adaptatif basé sur les ingrédients disponibles, une gestion intelligente du stock et un suivi nutritionnel complet."
+                data-stack="Flutter,SQLite,Dart"
+                data-github="https://github.com/DevKosX/S501_Developpement.git">
+                <div class="project-img">
+                    <img src="assets/img/projects/smartfridge.png" alt="Smart Fridge" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-utensils"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-utensils"></i></div>
                     <h3>Smart Fridge &amp; Recettes</h3>
-                    <p>Application mobile hors ligne : recommandation de recettes adaptive, gestion de stock et suivi
-                        nutritionnel.</p>
-                    <div class="stack-chips"><span>Flutter</span><span>SQLite</span></div>
-                    <div class="project-links">
-                        <a href="https://github.com/DevKosX/S501_Developpement.git" target="_blank"
-                            class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="190" data-category="fullstack">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="190" data-category="fullstack"
+                data-title="App UberEats"
+                data-desc="Système d'attribution intelligente des commandes avec filtrage géolocalisé et score de performance des livreurs. Intègre un cache Redis pour les données fréquemment consultées et une base MongoDB pour la persistance."
+                data-stack="React,Python,MongoDB,Redis,Flask,REST API"
+                data-github="https://github.com/Rafi-Bettaieb/UberEats_redis.git">
+                <div class="project-img">
+                    <img src="assets/img/projects/ubereats.png" alt="App UberEats" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-motorcycle"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-motorcycle"></i></div>
                     <h3>App UberEats</h3>
-                    <p>Attribution intelligente des commandes par géolocalisation et score de performance des livreurs.
-                    </p>
-                    <div class="stack-chips"><span>React</span><span>Python</span><span>MongoDB</span><span>Redis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Rafi-Bettaieb/UberEats_redis.git" target="_blank"
-                            class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="260" data-category="algo">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="260" data-category="algo"
+                data-title="WildLens"
+                data-desc="Jeu d'aventure et de puzzle 2D d'infiltration. Le joueur utilise différents filtres de vision animale en temps réel (infrarouge, ultraviolet, nuit) pour révéler des secrets cachés et résoudre des énigmes visuelles."
+                data-stack="Python,Pygame,NumPy,OpenCV"
+                data-github="https://github.com/Rafi-Bettaieb/wildlens">
+                <div class="project-img">
+                    <img src="assets/img/projects/wildlens.png" alt="WildLens" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-eye"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-eye"></i></div>
                     <h3>WildLens</h3>
-                    <p>Jeu d'aventure et de puzzle 2D d'infiltration. Utilisez différents filtres de vision animale en
-                        temps réel pour révéler des secrets et résoudre des énigmes.</p>
-                    <div class="stack-chips"><span>Python</span><span>Pygame</span><span>NumPy</span></div>
-                    <div class="project-links">
-                        <a href="https://github.com/Rafi-Bettaieb/wildlens" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="330" data-category="fullstack ia">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="330" data-category="fullstack ia"
+                data-title="SensiNum"
+                data-desc="Plateforme éducative de sensibilisation à la sécurité numérique comprenant des cours interactifs, des quiz et un chatbot IA. Déployée en architecture conteneurisée avec une API REST simulant des vulnérabilités réseau à des fins pédagogiques."
+                data-stack="Node.js,Vue.js,Tailwind CSS,Docker,Express,REST API"
+                data-github="https://github.com/Rafi-Bettaieb/SensiNum.git"
+                data-demo="https://sensibilisationnum.vercel.app/">
+                <div class="project-img">
+                    <img src="assets/img/projects/sensinum.png" alt="SensiNum" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>SensiNum</h3>
-                    <p>Plateforme éducative (cours, quiz, chatbot IA) en architecture conteneurisée, simulant des
-                        vulnérabilités réseau.</p>
-                    <div class="stack-chips">
-                        <span>Node.js</span><span>Vue.js</span><span>Tailwind</span><span>Docker</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Rafi-Bettaieb/SensiNum.git" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="https://sensibilisationnum.vercel.app/" target="_blank"
-                            class="project-link project-link-demo"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="algo">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="algo"
+                data-title="Diagramme de Voronoï"
+                data-desc="Application Python permettant de générer, visualiser et exporter des diagrammes de Voronoï à partir d'une liste de points 2D. Implémentation de l'algorithme de Fortune pour une génération efficace, avec interface graphique interactive."
+                data-stack="Python,Tkinter,Matplotlib,NumPy"
+                data-github="https://github.com/Rafi-Bettaieb/SAE_Voronoi_E">
+                <div class="project-img">
+                    <img src="assets/img/projects/voronoi.png" alt="Voronoï" onerror="this.style.display='none'">
+                    <div class="project-img-fallback"><i class="fa-solid fa-project-diagram"></i></div>
+                </div>
                 <div class="project-body">
-                    <div class="project-icon"><i class="fa-solid fa-project-diagram"></i></div>
                     <h3>Diagramme de Voronoï</h3>
-                    <p>Application Python permettant de générer, visualiser et exporter des diagrammes de Voronoï à
-                        partir d’une liste de points 2D.</p>
-                    <div class="stack-chips"><span>Python</span><span>Tkinter</span><span>Matplotlib</span></div>
-                    <div class="project-links">
-                        <a href="https://github.com/Rafi-Bettaieb/SAE_Voronoi_E" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
+                    <span class="project-click-hint">Voir le projet</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ───── PROJECT MODAL ───── -->
+    <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeProjectModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-img-wrap">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-img-fallback" id="modal-fallback"></div>
+            </div>
+            <div class="modal-content">
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <div class="modal-stack" id="modal-stack"></div>
+                <div class="modal-links" id="modal-links"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- ───── CERTIFS & PLUS ───── -->
     <section id="extras" class="extras-section">
@@ -495,10 +515,248 @@
         </div>
     </section>
 
+    <!-- ───── COMPÉTITIONS ───── -->
+    <section id="competitions" class="competitions-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">05 — Compétitions</span>
+            <h2>Programmation <span>Compétitive</span></h2>
+        </div>
+        <div class="competitions-grid">
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="comp-year">2023</div>
+                <h4>TCPC</h4>
+                <p class="comp-full">Tunisian Collegiate Programming Contest</p>
+                <p class="comp-desc">Compétition nationale de programmation algorithmique. Résolution de problèmes complexes en C++ sous contrainte de temps.</p>
+                <div class="stack-chips"><span>C++</span><span>Algorithmique</span></div>
+            </div>
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="comp-year">2025</div>
+                <h4>Nuit de l'Info</h4>
+                <p class="comp-full">Compétition nationale française</p>
+                <p class="comp-desc">Développement d'une application web en équipe en une seule nuit, sur une thématique imposée. Créativité et rapidité d'exécution au rendez-vous.</p>
+                <div class="stack-chips"><span>Web</span><span>Travail d'équipe</span></div>
+            </div>
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="comp-year">2025</div>
+                <h4>24h de l'Info</h4>
+                <p class="comp-full">Hackathon de 24 heures</p>
+                <p class="comp-desc">Sprint de développement intensif en équipe. Conception, développement et livraison d'un projet fonctionnel en moins de 24 heures.</p>
+                <div class="stack-chips"><span>Hackathon</span><span>Full-Stack</span></div>
+            </div>
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="240">
+                <div class="comp-year">2024</div>
+                <h4>Winter Cup</h4>
+                <p class="comp-full">Organisée par l'INSAT — Tunis</p>
+                <p class="comp-desc">Compétition de problem solving organisée par l'Institut National des Sciences Appliquées et de Technologie. Exercices algorithmiques chronométrés en C++.</p>
+                <div class="stack-chips"><span>C++</span><span>Problem Solving</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── PORTFOLIO BUT ───── -->
+    <section id="portfolio-but" class="portfolio-but-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-label">06 — Portfolio BUT Informatique</span>
+            <h2>Bilan de <span>Compétences</span></h2>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="pbut-block" data-aos="fade-up" data-aos-delay="80">
+            <div class="pbut-block-header">
+                <div>
+                    <h3>Introduction — Mon parcours</h3>
+                    <span class="pbut-tag">Logique de formation</span>
+                </div>
+            </div>
+            <div class="pbut-block-content">
+                <p>Passionné par la résolution de problèmes et l'informatique, j'ai choisi de suivre un double cursus entre l'IUT de Villetaneuse (Sorbonne Paris Nord) et l'ISI Tunis. Ce parcours exigeant m'a permis d'acquérir de solides compétences techniques tout en développant ma capacité d'adaptation et mon autonomie. Au travers de mes projets académiques, personnels et de mes expériences professionnelles, j'ai renforcé mes compétences en développement Full-Stack et découvert un intérêt particulier pour l'ingénierie des données. Ces expériences ont confirmé mon souhait d'évoluer dans des environnements innovants où je peux concevoir des solutions utiles et relever de nouveaux défis. À la rentrée 2026, j'intégrerai Télécom SudParis en cycle ingénieur par alternance afin de poursuivre mon développement professionnel et approfondir mes compétences dans ces domaines.</p>
+            </div>
+        </div>
+
+        <!-- COMPÉTENCES -->
+        <div class="pbut-competences-grid">
+
+            <!-- C1 — RÉALISER -->
+            <div class="pbut-competence-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="pbut-comp-header">
+                    <div class="pbut-comp-number">C1</div>
+                    <div>
+                        <h4>Réaliser</h4>
+                        <span>Développer des applications informatiques</span>
+                    </div>
+                </div>
+                <div class="pbut-comp-body">
+                    <div class="pbut-comp-subsection">
+                        <strong>Outils & technologies mobilisés</strong>
+                        <div class="stack-chips">
+                            <span>Python</span><span>React</span><span>Node.js</span><span>Flask</span>
+                            <span>Flutter</span><span>Java/JavaFX</span><span>MongoDB</span><span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="pbut-comp-subsection">
+                        <strong>Traces & expériences (SAÉ)</strong>
+                        <ul class="pbut-list">
+                            <li><strong>SAÉ Smart Fridge & Recettes (BUT 3)</strong> — Application mobile Flutter/SQLite avec système de recommandation de recettes adaptatif, gestion de stock et suivi nutritionnel hors ligne.</li>
+                            <li><strong>Stage Tunisys (2025)</strong> — Développement d'une app web React/Flask pour la consultation des médias DAB, avec API REST sécurisée (JWT, SFTP).</li>
+                            <li><strong>Stage Omicrone (2026)</strong> — Conception d'une plateforme de Data Observability complète (Kafka, FastAPI, React, PostgreSQL).</li>
+                        </ul>
+                    </div>
+                    <div class="pbut-comp-subsection pbut-autoeval">
+                        <strong>Auto-évaluation</strong>
+                        <p>Compétence que je considère comme centrale dans mon profil. La diversité des langages et frameworks maîtrisés (du mobile au backend, du script Python au streaming Kafka) illustre ma capacité à m'adapter à tout environnement de développement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C2 — OPTIMISER -->
+            <div class="pbut-competence-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="pbut-comp-header">
+                    <div class="pbut-comp-number">C2</div>
+                    <div>
+                        <h4>Optimiser</h4>
+                        <span>Proposer des applications informatiques optimisées</span>
+                    </div>
+                </div>
+                <div class="pbut-comp-body">
+                    <div class="pbut-comp-subsection">
+                        <strong>Outils & technologies mobilisés</strong>
+                        <div class="stack-chips">
+                            <span>C++</span><span>Algorithmes</span><span>Redis</span><span>Codeforces</span>
+                            <span>Tkinter</span><span>NumPy</span><span>Kafka (KRaft)</span>
+                        </div>
+                    </div>
+                    <div class="pbut-comp-subsection">
+                        <strong>Traces & expériences (SAÉ)</strong>
+                        <ul class="pbut-list">
+                            <li><strong>SAÉ Diagramme de Voronoï (BUT 3)</strong> — Implémentation de l'algorithme de Voronoï en Python avec visualisation Tkinter/Matplotlib, optimisation du calcul géométrique sur des ensembles de points 2D.</li>
+                            <li><strong>Programmation compétitive (Codeforces, TCPC)</strong> — Résolution de problèmes algorithmiques complexes en C++, avec contraintes strictes de temps et mémoire.</li>
+                            <li><strong>Stage Omicrone (2026)</strong> — Optimisation de la scalabilité du pipeline Kafka, suivi des KPIs de latence et throughput, tuning de la configuration KRaft.</li>
+                        </ul>
+                    </div>
+                    <div class="pbut-comp-subsection pbut-autoeval">
+                        <strong>Auto-évaluation</strong>
+                        <p>La programmation compétitive a profondément ancré le réflexe d'optimisation dans ma façon de coder. Je reste attentif à la complexité algorithmique et aux performances système, notamment dans les contextes de traitement de données en temps réel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C6 — COLLABORER -->
+            <div class="pbut-competence-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pbut-comp-header">
+                    <div class="pbut-comp-number">C6</div>
+                    <div>
+                        <h4>Collaborer</h4>
+                        <span>Travailler dans une équipe informatique</span>
+                    </div>
+                </div>
+                <div class="pbut-comp-body">
+                    <div class="pbut-comp-subsection">
+                        <strong>Outils & méthodes mobilisés</strong>
+                        <div class="stack-chips">
+                            <span>Git / GitHub</span><span>Agile / Scrum</span><span>Trello</span>
+                            <span>UML</span><span>IEEE Student Branch</span><span>Club Freeways</span>
+                        </div>
+                    </div>
+                    <div class="pbut-comp-subsection">
+                        <strong>Traces & expériences (SAÉ)</strong>
+                        <ul class="pbut-list">
+                            <li><strong>SAÉ SensiNum (BUT 3 — Chef de groupe)</strong> — Coordination d'une équipe pour développer une plateforme éducative conteneurisée. Gestion du backlog, animation des sprints, revues de code.</li>
+                            <li><strong>Co-responsable du Club Freeways (Problem Solving)</strong> — Organisation de sessions d'entraînement algorithmique, coordination avec l'IEEE Student Branch.</li>
+                            <li><strong>Stages Tunisys & Omicrone</strong> — Intégration dans des équipes professionnelles, suivi de méthodologies Agile/Scrum, participation à des daily stand-ups et retrospectives.</li>
+                        </ul>
+                    </div>
+                    <div class="pbut-comp-subsection pbut-autoeval">
+                        <strong>Auto-évaluation</strong>
+                        <p>La collaboration est une compétence que j'ai développée autant en contexte étudiant (chef de groupe sur SensiNum, co-responsable de Freeways) qu'en milieu professionnel. Je retiens notamment l'importance d'une communication claire entre profils techniques et non-techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VOLET STAGE BUT 3 -->
+        <div class="pbut-block pbut-stage-block" data-aos="fade-up" data-aos-delay="100">
+            <div class="pbut-block-header">
+                <div>
+                    <h3>Volet Stage BUT 3 — Omicrone</h3>
+                    <span class="pbut-tag pbut-tag-stage">Avril – Août 2026 · La Garenne-Colombes</span>
+                </div>
+            </div>
+            <div class="pbut-block-content">
+                <div class="pbut-stage-grid">
+                    <div class="pbut-stage-col">
+                        <h5>Missions & compétences mobilisées</h5>
+                        <ul class="pbut-list">
+                            <li>Conception et développement d'une plateforme de <strong>Data Observability</strong> en temps réel (streaming Kafka + batch) — compétence <em>Réaliser</em></li>
+                            <li>Détection de 8 types d'anomalies (intégrité, fraîcheur, volume) avec dashboards Grafana interactifs — compétences <em>Réaliser + Optimiser</em></li>
+                            <li>Implémentation d'un système d'alerting multi-canal (emails, Slack) et suivi de KPIs critiques (latence, throughput) — compétence <em>Optimiser</em></li>
+                            <li>Travail en autonomie avec reporting régulier, utilisation de Git et méthodologie Agile — compétence <em>Collaborer</em></li>
+                        </ul>
+                    </div>
+                    <div class="pbut-stage-col">
+                        <h5>Analyse critique</h5>
+                        <div class="pbut-critique-grid">
+                            <div class="pbut-critique-item pbut-critique-plus">
+                                <span class="pbut-critique-label">Point fort</span>
+                                <p>La maîtrise de technologies de streaming modernes (Apache Kafka, Faust) que je ne connaissais pas avant ce stage. La mise en pratique sur un vrai pipeline de production a accéléré ma montée en compétence bien au-delà de ce qu'un cours aurait pu apporter.</p>
+                            </div>
+                            <div class="pbut-critique-item pbut-critique-warn">
+                                <span class="pbut-critique-label">Point de vigilance</span>
+                                <p>La complexité de l'orchestration Kafka sous Docker (dépendances inter-services, configuration KRaft) m'a ralenti au démarrage. J'aurais dû consulter la documentation officielle plus tôt plutôt que de procéder par essais-erreurs.</p>
+                            </div>
+                            <div class="pbut-critique-item pbut-critique-acquis">
+                                <span class="pbut-critique-label">Acquis pour la suite</span>
+                                <p>La rigueur de la conception avant le code : modéliser les flux de données (UML, diagrammes de séquence) avant d'implémenter m'a évité des refactorisations coûteuses. Je l'appliquerai systématiquement à Télécom SudParis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pbut-stack-row">
+                    <strong>Stack utilisée :</strong>
+                    <div class="stack-chips">
+                        <span>Apache Kafka</span><span>Faust</span><span>FastAPI</span><span>React</span>
+                        <span>PostgreSQL</span><span>Grafana</span><span>Docker Compose</span><span>Slack API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="pbut-block pbut-conclusion-block" data-aos="fade-up" data-aos-delay="80">
+            <div class="pbut-block-header">
+                <div>
+                    <h3>Conclusion</h3>
+                    <span class="pbut-tag">Synthèse & perspectives</span>
+                </div>
+            </div>
+            <div class="pbut-block-content">
+                <div class="pbut-conclusion-grid">
+                    <div class="pbut-conclusion-item">
+                        <div>
+                            <strong>Points forts identifiés</strong>
+                            <p>Polyvalence technique (Full-Stack, Data Engineering, Mobile), capacité d'apprentissage rapide sur de nouvelles technologies, rigueur algorithmique issue de la programmation compétitive, expérience professionnelle concrète dès la première année.</p>
+                        </div>
+                    </div>
+                    <div class="pbut-conclusion-item">
+                        <div>
+                            <strong>Points de vigilance</strong>
+                            <p>Tendance à sous-estimer la phase de setup et de documentation avant de coder. Besoin de renforcer encore les compétences en MLOps et en architecture distribuée à grande échelle — axes sur lesquels je me formerai à Télécom SudParis.</p>
+                        </div>
+                    </div>
+                    <div class="pbut-conclusion-item">
+                        <div>
+                            <strong>Bonnes pratiques & acquis</strong>
+                            <p>Modéliser avant de coder, versionner dès le premier commit, adopter une méthodologie Agile même en solo. Ces réflexes, construits au fil des SAÉ et des stages, sont devenus des automatismes que je porterai dans ma carrière d'ingénieur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ───── CONTACT ───── -->
     <section id="contact" class="contact-section">
         <div class="contact-inner" data-aos="zoom-in">
-            <span class="section-label">05 — Contact</span>
+            <span class="section-label">07 — Contact</span>
             <h2>Travaillons <span>ensemble</span></h2>
             <p>Disponible pour une alternance IA / Data / Full-Stack de 36 mois dès septembre 2026. N'hésitez pas à me
                 contacter !</p>
@@ -555,32 +813,79 @@
 
         // ── GITHUB API ──
         async function loadGithubStats() {
+            // Repos publics via API officielle
             try {
                 const res = await fetch('https://api.github.com/users/Rafi-Bettaieb');
-                if (!res.ok) throw new Error();
-                const data = await res.json();
-                document.getElementById('gh-repos-count').textContent = data.public_repos ?? '—';
-
-                // Contributions via GitHub contributions calendar API (no token needed)
-                const contribRes = await fetch(`https://github-contributions-api.jogruber.de/v4/Rafi-Bettaieb?y=last`);
-                if (contribRes.ok) {
-                    const contribData = await contribRes.json();
-                    const total = contribData.total?.lastYear ?? contribData.total?.['2025'] ?? 0;
-                    document.getElementById('gh-commits-count').textContent = total > 0 ? total : '—';
-                } else {
-                    document.getElementById('gh-commits-count').textContent = '—';
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('gh-repos-count').textContent = data.public_repos ?? '—';
                 }
             } catch (e) {
-                ['gh-repos-count', 'gh-commits-count']
-                    .forEach(id => { document.getElementById(id).textContent = '—'; });
+                document.getElementById('gh-repos-count').textContent = '—';
+            }
+
+            // Contributions — GitHub GraphQL n'est pas accessible sans token,
+            // on utilise github-contributions-api avec fallback statique
+            try {
+                const contribRes = await fetch('https://github-contributions-api.jogruber.de/v4/Rafi-Bettaieb?y=last', { signal: AbortSignal.timeout(5000) });
+                if (contribRes.ok) {
+                    const contribData = await contribRes.json();
+                    const total = contribData.total?.lastYear ?? Object.values(contribData.total ?? {}).find(v => v > 0) ?? 0;
+                    document.getElementById('gh-commits-count').textContent = total > 0 ? total : '200+';
+                } else {
+                    document.getElementById('gh-commits-count').textContent = '200+';
+                }
+            } catch (e) {
+                document.getElementById('gh-commits-count').textContent = '200+';
             }
         }
         loadGithubStats();
 
-        // ── FILTRES PROJETS ──
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        // ── PROJECT MODAL ──
         const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => {
+                const title = card.dataset.title || '';
+                const desc  = card.dataset.desc  || '';
+                const stack = card.dataset.stack ? card.dataset.stack.split(',') : [];
+                const github = card.dataset.github || '';
+                const demo   = card.dataset.demo   || '';
+                const imgSrc = card.querySelector('.project-img img')?.src || '';
 
+                document.getElementById('modal-title').innerHTML = title;
+                document.getElementById('modal-desc').textContent = desc;
+
+                const stackEl = document.getElementById('modal-stack');
+                stackEl.innerHTML = stack.map(s => `<span>${s.trim()}</span>`).join('');
+
+                const linksEl = document.getElementById('modal-links');
+                linksEl.innerHTML = '';
+                if (github) linksEl.innerHTML += `<a href="${github}" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>`;
+                if (demo)   linksEl.innerHTML += `<a href="${demo}"   target="_blank" class="project-link project-link-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>`;
+
+                const modalImg = document.getElementById('modal-img');
+                const fallback = document.getElementById('modal-fallback');
+                modalImg.src = imgSrc;
+                modalImg.style.display = '';
+                modalImg.onerror = () => { modalImg.style.display = 'none'; };
+                fallback.innerHTML = card.querySelector('.project-img-fallback')?.innerHTML || '';
+
+                document.getElementById('project-modal').classList.add('modal-open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.remove('modal-open');
+            document.body.style.overflow = '';
+        }
+        function closeModal(e) {
+            if (e.target.id === 'project-modal') closeProjectModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProjectModal(); });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
