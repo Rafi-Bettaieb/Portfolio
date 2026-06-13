@@ -329,7 +329,8 @@
                 data-title="WildLens"
                 data-desc="Jeu d'aventure et de puzzle 2D d'infiltration. Le joueur utilise différents filtres de vision animale en temps réel (infrarouge, ultraviolet, nuit) pour révéler des secrets cachés et résoudre des énigmes visuelles."
                 data-stack="Python,Pygame,NumPy,OpenCV"
-                data-github="https://github.com/Rafi-Bettaieb/wildlens">
+                data-github="https://github.com/Rafi-Bettaieb/wildlens"
+                data-video="https://youtu.be/iNjc0IhMR0U">
                 <div class="project-img">
                     <img src="assets/img/projects/wildlens.png" alt="WildLens" loading="lazy"
                         onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
@@ -379,6 +380,8 @@
             <button class="modal-close" onclick="closeProjectModal()"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-img-wrap">
                 <img id="modal-img" src="" alt="">
+                <video id="modal-video" controls playsinline style="display:none"></video>
+                <iframe id="modal-iframe" style="display:none" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                 <div class="modal-img-fallback" id="modal-fallback"></div>
             </div>
             <div class="modal-content">
@@ -1003,22 +1006,49 @@
                 if (github) linksEl.innerHTML += `<a href="${github}" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>`;
                 if (demo)   linksEl.innerHTML += `<a href="${demo}"   target="_blank" class="project-link project-link-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>`;
 
-                const modalImg = document.getElementById('modal-img');
-                const fallback = document.getElementById('modal-fallback');
+                const modalImg    = document.getElementById('modal-img');
+                const modalVideo  = document.getElementById('modal-video');
+                const modalIframe = document.getElementById('modal-iframe');
+                const fallback    = document.getElementById('modal-fallback');
+                const videoSrc    = card.dataset.video || '';
 
-                // Récupération de l'icône de secours
                 fallback.innerHTML = card.querySelector('.project-img-fallback')?.innerHTML || '';
 
-                if (imgSrc && !imgSrc.endsWith('undefined') && !card.querySelector('.project-img').classList.contains('img-error')) {
+                // Réinitialiser tous les éléments
+                modalImg.style.display    = 'none';
+                modalVideo.style.display  = 'none';
+                modalIframe.style.display = 'none';
+                fallback.style.display    = 'none';
+                modalVideo.pause();
+                modalVideo.src  = '';
+                modalIframe.src = '';
+
+                function getYoutubeEmbed(url) {
+                    const short = url.match(/youtu\.be\/([^?&]+)/);
+                    const long  = url.match(/youtube\.com\/watch\?v=([^&]+)/);
+                    const id = (short && short[1]) || (long && long[1]);
+                    return id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` : null;
+                }
+
+                if (videoSrc) {
+                    const embedUrl = getYoutubeEmbed(videoSrc);
+                    if (embedUrl) {
+                        // YouTube → iframe
+                        modalIframe.src = embedUrl;
+                        modalIframe.style.display = 'block';
+                    } else {
+                        // Fichier local → video
+                        modalVideo.src = videoSrc;
+                        modalVideo.style.display = 'block';
+                    }
+                } else if (imgSrc && !imgSrc.endsWith('undefined') && !card.querySelector('.project-img').classList.contains('img-error')) {
                     modalImg.src = imgSrc;
                     modalImg.style.display = 'block';
-                    fallback.style.display = 'none';
                     modalImg.onerror = () => {
                         modalImg.style.display = 'none';
                         fallback.style.display = 'flex';
                     };
                 } else {
-                    modalImg.style.display = 'none';
                     fallback.style.display = 'flex';
                 }
 
@@ -1030,6 +1060,9 @@
         function closeProjectModal() {
             document.getElementById('project-modal').classList.remove('modal-open');
             document.body.style.overflow = '';
+            const v = document.getElementById('modal-video');
+            v.pause(); v.src = '';
+            document.getElementById('modal-iframe').src = '';
         }
         function closeModal(e) {
             if (e.target.id === 'project-modal') closeProjectModal();
