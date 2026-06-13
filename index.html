@@ -272,7 +272,8 @@
                 data-github="https://github.com/Rafi-Bettaieb/TalkTime.git"
                 data-demo="https://talktime-deployment-test-hasb.vercel.app/">
                 <div class="project-img">
-                    <img src="assets/img/projects/talktime.png" alt="TalkTime" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/talktime.png" alt="TalkTime" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-comments"></i></div>
                 </div>
                 <div class="project-body">
@@ -286,7 +287,8 @@
                 data-stack="Flutter,SQLite,Dart"
                 data-github="https://github.com/DevKosX/S501_Developpement.git">
                 <div class="project-img">
-                    <img src="assets/img/projects/smartfridge.png" alt="Smart Fridge" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/smartfridge.png" alt="Smart Fridge" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-utensils"></i></div>
                 </div>
                 <div class="project-body">
@@ -300,7 +302,8 @@
                 data-stack="React,Python,MongoDB,Redis,Flask,REST API"
                 data-github="https://github.com/Rafi-Bettaieb/UberEats_redis.git">
                 <div class="project-img">
-                    <img src="assets/img/projects/ubereats.png" alt="App UberEats" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/ubereats.png" alt="App UberEats" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-motorcycle"></i></div>
                 </div>
                 <div class="project-body">
@@ -314,7 +317,8 @@
                 data-stack="Python,Pygame,NumPy,OpenCV"
                 data-github="https://github.com/Rafi-Bettaieb/wildlens">
                 <div class="project-img">
-                    <img src="assets/img/projects/wildlens.png" alt="WildLens" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/wildlens.png" alt="WildLens" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-eye"></i></div>
                 </div>
                 <div class="project-body">
@@ -329,7 +333,8 @@
                 data-github="https://github.com/Rafi-Bettaieb/SensiNum.git"
                 data-demo="https://sensibilisationnum.vercel.app/">
                 <div class="project-img">
-                    <img src="assets/img/projects/sensinum.png" alt="SensiNum" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/sensinum.png" alt="SensiNum" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-shield-halved"></i></div>
                 </div>
                 <div class="project-body">
@@ -343,7 +348,8 @@
                 data-stack="Python,Tkinter,Matplotlib,NumPy"
                 data-github="https://github.com/Rafi-Bettaieb/SAE_Voronoi_E">
                 <div class="project-img">
-                    <img src="assets/img/projects/voronoi.png" alt="Voronoï" onerror="this.style.display='none'">
+                    <img src="assets/img/projects/voronoi.png" alt="Voronoï" loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('img-error')">
                     <div class="project-img-fallback"><i class="fa-solid fa-project-diagram"></i></div>
                 </div>
                 <div class="project-body">
@@ -655,7 +661,7 @@
                         <div class="stack-chips"><span>Kafka</span><span>Faust</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>Grafana</span><span>Docker</span></div>
                     </div>
                 </div>
-                <div class="pbut-critique-grid" style="grid-template-columns:repeat(3,1fr);display:grid;gap:12px;margin-top:20px">
+                <div class="pbut-critique-grid">
                     <div class="pbut-critique-item pbut-critique-plus">
                         <span class="pbut-critique-label">Point fort</span>
                         <p>Maîtrise de Kafka et Faust sur un vrai pipeline de production — montée en compétence accélérée.</p>
@@ -951,19 +957,18 @@
                 // Récupération de l'icône de secours
                 fallback.innerHTML = card.querySelector('.project-img-fallback')?.innerHTML || '';
 
-                if (imgSrc && !imgSrc.endsWith('undefined')) {
+                if (imgSrc && !imgSrc.endsWith('undefined') && !card.querySelector('.project-img').classList.contains('img-error')) {
                     modalImg.src = imgSrc;
                     modalImg.style.display = 'block';
-                    fallback.style.display = 'none'; // <-- ICI : On cache totalement l'icône si on a une image !
+                    fallback.style.display = 'none';
+                    modalImg.onerror = () => {
+                        modalImg.style.display = 'none';
+                        fallback.style.display = 'flex';
+                    };
                 } else {
                     modalImg.style.display = 'none';
-                    fallback.style.display = 'flex'; // On l'affiche uniquement s'il n'y a pas d'image
-                }
-
-                modalImg.onerror = () => {
-                    modalImg.style.display = 'none';
                     fallback.style.display = 'flex';
-                };
+                }
 
                 document.getElementById('project-modal').classList.add('modal-open');
                 document.body.style.overflow = 'hidden';

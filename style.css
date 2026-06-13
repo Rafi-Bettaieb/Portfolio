@@ -823,43 +823,45 @@ section {
     background: var(--surface-hover);
 }
 
-/* Zone Image (Cartes) adaptative à la taille de l'image */
+/* Zone Image — hauteur uniforme, image entière visible */
 .project-img {
     position: relative;
     width: 100%;
-    height: auto; /* S'adapte à la hauteur réelle de l'image */
-    min-height: 160px; /* Sécurité si l'image ne charge pas */
-    overflow: hidden;
-    background: var(--surface);
+    aspect-ratio: 16 / 9;
+    background: var(--accent-subtle);
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .project-img img {
-    width: 100%;
-    height: auto; /* Respecte les proportions natives */
-    object-fit: contain; /* L'image est affichée entièrement, sans coupure */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     display: block;
     transition: transform 0.4s ease;
 }
 .project-card:hover .project-img img { transform: scale(1.05); }
 
+/* Fallback icône — caché par défaut, visible uniquement en cas d'erreur */
 .project-img-placeholder,
 .project-img-fallback {
     position: absolute;
     inset: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     color: var(--accent);
-    opacity: 0.3;
+    opacity: 0.35;
     pointer-events: none;
 }
-.project-img img:not([style*="display: none"]) + .project-img-fallback,
-.project-img img:not([style*="display: none"]) + .project-img-placeholder {
-    display: none;
-}
+.project-img.img-error .project-img-fallback,
+.project-img.img-error .project-img-placeholder { display: flex; }
 
 /* Zone Texte et Contenu */
 .project-body {
@@ -1045,6 +1047,20 @@ section {
 
 .contact-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+/* ── CERTIF INLINE LINK ── */
+.certif-inline-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid var(--accent-light);
+    transition: opacity 0.2s;
+}
+.certif-inline-link:hover { opacity: 0.75; }
+.certif-inline-link i { font-size: 0.7em; }
+
 /* ── FOOTER ── */
 footer {
     text-align: center;
@@ -1056,12 +1072,16 @@ footer {
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-    .github-cards { grid-template-columns: repeat(2, 1fr); }
 
+/* Nav: hamburger at 1100px — too many links to fit smaller screens */
+@media (max-width: 1100px) {
     .nav-container .links { display: none; }
     .hamburg { display: block; }
     .cancel { position: static; display: block; }
+}
+
+@media (max-width: 900px) {
+    .github-cards { grid-template-columns: repeat(2, 1fr); }
 
     #home {
         flex-direction: column;
@@ -1082,11 +1102,29 @@ footer {
     .timeline-container { grid-template-columns: 1fr; gap: 2rem; }
 
     .contact-inner { padding: 40px 24px; }
+
+    .pbut-critique-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 600px) {
+    section { padding: 64px 0 48px; }
+    .section-heading { margin-bottom: 2.5rem; }
+    .project-filters { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 4px; }
+    .filter-btn { flex-shrink: 0; }
 }
 
 @media (max-width: 500px) {
     .projects-grid { grid-template-columns: 1fr; }
     .extras-container { flex-direction: column; }
+    .github-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .contact-inner { padding: 28px 18px; }
+    .hero-badge { font-size: 0.72rem; padding: 6px 12px; gap: 6px; }
+    .modal-content { padding: 18px 16px 24px; }
+    .pbut-block-header { padding: 14px 16px; }
+    .pbut-block-content { padding: 14px 16px; }
 }
 
 /* ══════════════════════════════════════════
@@ -1277,9 +1315,10 @@ footer {
 }
 
 .pbut-critique-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
 }
 .pbut-critique-item {
     border-radius: var(--radius-sm);
@@ -1354,6 +1393,7 @@ footer {
     .pbut-competences-grid { grid-template-columns: 1fr; }
     .pbut-stage-grid { grid-template-columns: 1fr; }
     .pbut-conclusion-grid { grid-template-columns: 1fr; }
+    .pbut-critique-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
     .pbut-block-header { padding: 16px 18px; }
@@ -1446,7 +1486,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1rem;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
@@ -1462,8 +1502,8 @@ footer {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     width: 100%;
-    max-width: 680px;
-    max-height: 90vh;
+    max-width: 920px;
+    max-height: 92vh;
     overflow-y: auto;
     position: relative;
     box-shadow: 0 24px 64px rgba(0,0,0,0.2);
@@ -1498,23 +1538,24 @@ footer {
 
 /* Zone Image de la modale */
 .modal-img-wrap {
-    position: relative;
     width: 100%;
-    height: auto; /* Laisse le conteneur s'adapter à la taille de l'image */
-    background: var(--surface);
+    aspect-ratio: 16 / 9;
+    background: var(--accent-subtle);
     border-radius: var(--radius) var(--radius) 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 12px;
     overflow: hidden;
 }
 
 .modal-img-wrap img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
-    max-height: 60vh; /* Empêche l'image de dépasser l'écran verticalement */
-    object-fit: contain; /* ASSURE QUE L'IMAGE ENTIÈRE SOIT VISIBLE */
     display: block;
+    border-radius: var(--radius-sm);
 }
 
 .modal-img-fallback {
