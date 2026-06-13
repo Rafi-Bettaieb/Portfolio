@@ -9,6 +9,18 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
         rel="stylesheet">
     <title>Portfolio — Rafi Bettaieb</title>
+    <meta name="description" content="Portfolio de Rafi Bettaieb — Futur ingénieur à Télécom SudParis (Institut Polytechnique de Paris), spécialisé en développement Full-Stack, Data Engineering et Machine Learning.">
+    <meta name="author" content="Rafi Bettaieb">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio — Rafi Bettaieb">
+    <meta property="og:description" content="Futur ingénieur à Télécom SudParis · IP Paris — Full-Stack · Data Engineering · IA">
+    <meta property="og:image" content="assets/favicon_io/android-chrome-512x512.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Portfolio — Rafi Bettaieb">
+    <meta name="twitter:description" content="Futur ingénieur à Télécom SudParis · IP Paris — Full-Stack · Data Engineering · IA">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
@@ -18,6 +30,8 @@
 </head>
 
 <body>
+
+    <div class="reading-progress" role="progressbar" aria-label="Progression de lecture"></div>
 
     <nav>
         <div class="nav-container">
@@ -39,7 +53,7 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()" role="button" aria-label="Ouvrir le menu" tabindex="0"></i>
             </div>
         </div>
         <div class="dropdown">
@@ -860,6 +874,10 @@
         <p>© 2026 Rafi Bettaieb · Télécom SudParis</p>
     </footer>
 
+    <button class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
     <script>
@@ -877,11 +895,45 @@
             cursorChar: '|',
         });
 
-        // Scroll-hint fade
+        // ── SCROLL : progress + back-to-top + scroll-hint ──
+        const progressBar = document.querySelector('.reading-progress');
+        const backToTop   = document.querySelector('.back-to-top');
+        const scrollHint  = document.querySelector('.scroll-hint');
+
         window.addEventListener('scroll', () => {
-            const sh = document.querySelector('.scroll-hint');
-            if (sh) sh.style.opacity = window.scrollY > 80 ? '0' : '1';
+            const scrollTop  = window.scrollY;
+            const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+
+            // Barre de progression
+            progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+
+            // Bouton retour en haut
+            backToTop.classList.toggle('visible', scrollTop > 300);
+
+            // Scroll hint
+            if (scrollHint) scrollHint.style.opacity = scrollTop > 80 ? '0' : '1';
         });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── NAV ACTIVE (Intersection Observer) ──
+        const sections    = document.querySelectorAll('section[id]');
+        const navLinks    = document.querySelectorAll('.nav-container .links .link a');
+        const dropLinks   = document.querySelectorAll('.dropdown .links a');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === `#${id}`));
+                    dropLinks.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === `#${id}`));
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+        sections.forEach(s => sectionObserver.observe(s));
 
         // ── DARK MODE ──
         const themeToggle = document.getElementById('themeToggle');

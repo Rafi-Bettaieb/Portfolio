@@ -1061,6 +1061,64 @@ section {
 .certif-inline-link:hover { opacity: 0.75; }
 .certif-inline-link i { font-size: 0.7em; }
 
+/* ── BARRE DE PROGRESSION ── */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent), var(--accent-light));
+    z-index: 2001;
+    transition: width 0.08s linear;
+    pointer-events: none;
+}
+
+/* ── BOUTON RETOUR EN HAUT ── */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 20px var(--accent-glow);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s, background 0.2s;
+    z-index: 1500;
+}
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background: var(--accent-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px var(--accent-glow);
+}
+
+/* ── LIEN NAV ACTIF ── */
+.nav-container .links .link a.nav-active {
+    color: var(--accent);
+    font-weight: 600;
+}
+.nav-container .links .contact-btn a.nav-active {
+    color: white;
+}
+.dropdown .links a.nav-active {
+    color: var(--accent);
+    background: var(--accent-subtle);
+}
+
 /* ── FOOTER ── */
 footer {
     text-align: center;
