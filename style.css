@@ -1159,9 +1159,6 @@ footer {
 
 @media (max-width: 900px) {
     .github-cards  { grid-template-columns: repeat(2, 1fr); }
-    .culture-grid  { grid-template-columns: repeat(2, 1fr); }
-    .culture-card  { padding: 22px 20px; }
-    .culture-card-header h4 { font-size: 0.95rem; }
 
     #home {
         flex-direction: column;
@@ -1191,9 +1188,6 @@ footer {
     .section-heading { margin-bottom: 2.5rem; }
     .project-filters { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 4px; }
     .filter-btn { flex-shrink: 0; }
-    .culture-grid { grid-template-columns: 1fr; }
-    .culture-card { padding: 20px 18px; }
-    .culture-tags span { font-size: 0.72rem; letter-spacing: 0.01em; flex-wrap: wrap; }
 }
 
 @media (max-width: 500px) {
@@ -1204,11 +1198,6 @@ footer {
 @media (max-width: 480px) {
     .contact-inner { padding: 28px 18px; }
     .hero-badge { font-size: 0.72rem; padding: 6px 12px; gap: 6px; }
-    .culture-card { padding: 16px 14px; gap: 12px; }
-    .culture-icon { width: 38px; height: 38px; font-size: 1rem; border-radius: 10px; }
-    .culture-card-header h4 { font-size: 0.9rem; }
-    .culture-list li { font-size: 0.82rem; }
-    .culture-tags span { font-size: 0.68rem; }
 }
 /* NOTE : .modal-content, .pbut-block-header, .pbut-block-content 480px
    sont déclarés après tous les blocs 600px (voir bas du fichier) */
@@ -1343,6 +1332,26 @@ footer {
 
 .culture-tags span i {
     font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+    .culture-grid { grid-template-columns: repeat(2, 1fr); }
+    .culture-card { padding: 22px 20px; }
+    .culture-card-header h4 { font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+    .culture-grid { grid-template-columns: 1fr; }
+    .culture-card { padding: 20px 18px; }
+    .culture-tags span { font-size: 0.72rem; letter-spacing: 0.01em; flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+    .culture-card { padding: 16px 14px; gap: 12px; }
+    .culture-icon { width: 38px; height: 38px; font-size: 1rem; border-radius: 10px; }
+    .culture-card-header h4 { font-size: 0.9rem; }
+    .culture-list li { font-size: 0.82rem; }
+    .culture-tags span { font-size: 0.68rem; }
 }
 
 /* ══════════════════════════════════════════
